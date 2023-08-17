@@ -8,6 +8,35 @@ function bookObj(bookName, authorName, numberofPages, bookId) {
     (this.bookId = bookId);
 }
 
+function createBox(book, author, page, bookid) {
+  const box = document.querySelector(".box");
+  const bookBox = document.createElement("div");
+  const p = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const p4 = document.createElement("p");
+  const deleteContainer = document.createElement("div");
+  deleteContainer.setAttribute("class", "delete-container");
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("class", "delete-button");
+  deleteButton.innerText = "Delete";
+
+  bookBox.append(deleteContainer);
+  p.innerText = `${book}`;
+  p2.innerText = `${author}`;
+  p3.innerText = `${page}`;
+  p4.innerText = `${bookid}`;
+  bookBox.append(p);
+  bookBox.append(p2);
+  bookBox.append(p3);
+  bookBox.append(p4);
+  deleteContainer.append(deleteButton);
+  bookBox.append(deleteContainer);
+
+  bookBox.setAttribute("class", "book-box");
+  box.append(bookBox);
+}
+
 let bookArray = [];
 
 //dom
@@ -21,14 +50,20 @@ const authorName = document.querySelector(".author-name");
 const numberOfPages = document.querySelector(".number-pages");
 const id = document.querySelector(".book-id");
 
+//for the book boxes
+
 addButton.addEventListener("click", () => {
   modal.showModal();
 });
 
 submitButton.addEventListener("click", () => {
-
   //in case nothing is entered!
-  if(name.value == "" && authorName.value == "" && numberOfPages.value == "" && id.value == "") {
+  if (
+    name.value == "" &&
+    authorName.value == "" &&
+    numberOfPages.value == "" &&
+    id.value == ""
+  ) {
     console.log("nothing to store haha");
     modal.close();
     return;
@@ -40,10 +75,9 @@ submitButton.addEventListener("click", () => {
   console.log(bookArray[bookArray.length - 1]);
 
   modal.close();
+  createBox(name.value, authorName.value, numberOfPages.value, id.value);
   name.value = "";
   authorName.value = "";
   numberOfPages.value = "";
   id.value = "";
 });
-
-//object constructor
