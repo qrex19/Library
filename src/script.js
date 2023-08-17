@@ -8,6 +8,35 @@ function bookObj(bookName, authorName, numberofPages, bookId) {
     (this.bookId = bookId);
 }
 
+function createBox(book, author, page, bookid) {
+  const box = document.querySelector(".box");
+  const bookBox = document.createElement("div");
+  const p = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const p4 = document.createElement("p");
+  const deleteContainer = document.createElement("div");
+  deleteContainer.setAttribute("class", "delete-container");
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("class", "delete-button");
+  deleteButton.innerText = "Delete";
+
+  bookBox.append(deleteContainer);
+  p.innerText = `${book}`;
+  p2.innerText = `${author}`;
+  p3.innerText = `${page}`;
+  p4.innerText = `${bookid}`;
+  bookBox.append(p);
+  bookBox.append(p2);
+  bookBox.append(p3);
+  bookBox.append(p4);
+  deleteContainer.append(deleteButton);
+  bookBox.append(deleteContainer);
+
+  bookBox.setAttribute("class", "book-box");
+  box.append(bookBox);
+}
+
 let bookArray = [];
 
 //dom
@@ -20,6 +49,8 @@ const name = document.querySelector(".name");
 const authorName = document.querySelector(".author-name");
 const numberOfPages = document.querySelector(".number-pages");
 const id = document.querySelector(".book-id");
+
+//for the book boxes
 
 addButton.addEventListener("click", () => {
   modal.showModal();
@@ -44,21 +75,9 @@ submitButton.addEventListener("click", () => {
   console.log(bookArray[bookArray.length - 1]);
 
   modal.close();
+  createBox(name.value, authorName.value, numberOfPages.value, id.value);
   name.value = "";
   authorName.value = "";
   numberOfPages.value = "";
   id.value = "";
 });
-
-{
-  /* <div class="book-box">
-        <p>Book name</p>
-        <p>author name</p>
-        <p>number of pages</p>
-        <p>Book ID</p>
-        <div class="delete-container">
-          <button class="delete-button">Delete</button>
-        </div>
-
-      </div> */
-}
