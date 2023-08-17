@@ -26,9 +26,13 @@ addButton.addEventListener("click", () => {
 });
 
 submitButton.addEventListener("click", () => {
-
   //in case nothing is entered!
-  if(name.value == "" && authorName.value == "" && numberOfPages.value == "" && id.value == "") {
+  if (
+    name.value == "" &&
+    authorName.value == "" &&
+    numberOfPages.value == "" &&
+    id.value == ""
+  ) {
     console.log("nothing to store haha");
     modal.close();
     return;
@@ -46,4 +50,15 @@ submitButton.addEventListener("click", () => {
   id.value = "";
 });
 
-//object constructor
+{
+  /* <div class="book-box">
+        <p>Book name</p>
+        <p>author name</p>
+        <p>number of pages</p>
+        <p>Book ID</p>
+        <div class="delete-container">
+          <button class="delete-button">Delete</button>
+        </div>
+
+      </div> */
+}
