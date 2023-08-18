@@ -36,36 +36,11 @@ body {
   gap: 20px;
 }
 
-.book-box {
-  width: 250px;
-  height: 300px;
-  background-color: white;
-  border: 0px;
-  box-shadow:
-    rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .delete-container {
   width: 80%;
   display: flex;
   justify-content: right;
   align-items: center;
-}
-
-.delete-button {
-  border: 2px solid black;
-  border-radius: 10px;
-  width: 90px;
-  height: 30px;
 }
 
 .modal-container {
@@ -108,4 +83,47 @@ dialog {
   background-color: black;
   color: white;
   border-radius: 10px;
+}
+
+.delete-button {
+  border: 3px solid black;
+  background-color: #d5ffd0;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+}
+
+p {
+  font-size: large;
+  font-weight: bold;
+  border: 2px solid white;
+  width: 95%;
+  height:35px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #FFE5E5;
+  margin: 0;
+}
+
+.book-box {
+  width: 300px;
+  height: 300px;
+  background-color: #F3FDE8;
+  border: 0px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
 }

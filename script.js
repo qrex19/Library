@@ -22,10 +22,10 @@ function createBox(book, author, page, bookid) {
   deleteButton.innerText = "Delete";
 
   bookBox.append(deleteContainer);
-  p.innerText = `${book}`;
-  p2.innerText = `${author}`;
-  p3.innerText = `${page}`;
-  p4.innerText = `${bookid}`;
+  p.innerText = `Title: ${book}`;
+  p2.innerText = `Author name: ${author}`;
+  p3.innerText = `Number of Pages: ${page}`;
+  p4.innerText = `Book ID: ${bookid}`;
   bookBox.append(p);
   bookBox.append(p2);
   bookBox.append(p3);
