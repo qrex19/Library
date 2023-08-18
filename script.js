@@ -75,7 +75,9 @@ submitButton.addEventListener("click", () => {
   console.log(bookArray[bookArray.length - 1]);
 
   modal.close();
-  createBox(name.value, authorName.value, numberOfPages.value, id.value);
+
+  createBox(name.value, authorName.value, numberOfPages.value, id.value); //div creator function
+
   name.value = "";
   authorName.value = "";
   numberOfPages.value = "";
